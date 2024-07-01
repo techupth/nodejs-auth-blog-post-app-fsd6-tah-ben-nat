@@ -39,7 +39,13 @@ postRouter.get("/", async (req, res) => {
     total_pages: totalPages,
   });
 });
-
+// test API
+postRouter.get("/test", (req, res) => {
+  return res.json({
+    message: "ทดสอบ API post",
+  });
+});
+//
 postRouter.get("/:id", async (req, res) => {
   const postId = ObjectId(req.params.id);
   const collection = db.collection("posts");
@@ -93,13 +99,6 @@ postRouter.delete("/:id", async (req, res) => {
   await collection.deleteOne({ _id: postId });
   return res.json({
     message: `Post ${postId} has been deleted.`,
-  });
-});
-
-// test API
-postRouter.get("/test/api", (req, res) => {
-  return res.json({
-    message: "ทดสอบ API post",
   });
 });
 
