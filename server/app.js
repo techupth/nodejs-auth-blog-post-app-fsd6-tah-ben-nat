@@ -1,9 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import postRouter from "./apps/posts.js";
+// import postRouter from "./apps/posts.js";
 import { client } from "./utils/db.js";
 import authRouter from "./routes/authRouter.mjs";
+import postRouter from "./routes/postRouter.mjs";
 
 async function init() {
   const app = express();
