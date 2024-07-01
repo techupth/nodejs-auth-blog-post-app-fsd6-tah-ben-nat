@@ -20,7 +20,7 @@ function AuthProvider(props) {
     //  Function `login` ทำหน้าที่สร้าง Request ไปที่ API POST /login
     //  ที่สร้างไว้ด้านบนพร้อมกับ Body ที่กำหนดไว้ในตารางที่ออกแบบไว้
     let tmp = data;
-    tmp.password = "doggocatto";
+    tmp.password = "catto";
     data = tmp;
     const result = await axios.post("http://localhost:4000/auth/login", data);
     const token = result.data.token;

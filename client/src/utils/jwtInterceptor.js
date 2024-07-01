@@ -30,7 +30,7 @@ function jwtInterceptor() {
         error.response.status === 401 &&
         error.response.statusText === "Unauthorized"
       ) {
-        windows.localStorage.removeItem("token");
+        window.localStorage.removeItem("token");
         window.location.replace("/login");
       }
       return Promise.reject(error);

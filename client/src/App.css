@@ -192,6 +192,7 @@ label {
 .login-form-container,
 .register-form-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
