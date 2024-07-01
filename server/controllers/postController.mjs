@@ -6,6 +6,7 @@ import {
   deletePost as deletePostFromModel,
 } from "../models/postModel.mjs";
 
+// GET
 export const getPosts = async (req, res) => {
   try {
     const payload = await getPostsFromModel(req.query);
@@ -30,6 +31,7 @@ export const getPostById = async (req, res) => {
   }
 };
 
+// POST
 export const createPost = async (req, res) => {
   try {
     const payload = await createPostFromModel(req.body);
@@ -42,6 +44,7 @@ export const createPost = async (req, res) => {
   }
 };
 
+// PUT
 export const updatePost = async (req, res) => {
   try {
     const payload = await updatePostFromModel(req);
@@ -53,6 +56,7 @@ export const updatePost = async (req, res) => {
   }
 };
 
+// DELETE
 export const deletePost = async (req, res) => {
   try {
     const payload = await deletePostFromModel(req.params);

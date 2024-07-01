@@ -15,7 +15,7 @@ export const createUser = async (username, password, firstname, lastname) => {
 
     return result.insertedId;
   } catch (error) {
-    Logger.error(`Error creating user: ${error.message}`);
+    console.error(`Error creating user: ${error.message}`);
     throw error;
   }
 };
@@ -28,7 +28,9 @@ export const findUserByUsername = async (username) => {
     }
     return user;
   } catch (error) {
-    log.error(`Error finding user by username=${username}: ${error.message}`);
+    console.error(
+      `Error finding user by username=${username}: ${error.message}`
+    );
   }
   throw error;
 };

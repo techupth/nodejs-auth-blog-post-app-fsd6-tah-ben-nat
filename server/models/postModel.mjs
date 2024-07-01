@@ -1,6 +1,7 @@
 import { ObjectId } from "mongodb";
 import { db } from "../utils/db.js";
 
+// GET
 export const getPosts = async (resQuery) => {
   const status = resQuery.status;
   const keywords = resQuery.keywords;
@@ -44,6 +45,7 @@ export const getPostById = async (params) => {
   return payload;
 };
 
+// POST
 export const createPost = async (reqBody) => {
   const hasPublished = reqBody.status === "published";
   const newPost = {
@@ -62,6 +64,7 @@ export const createPost = async (reqBody) => {
   return payload;
 };
 
+// PUT
 export const updatePost = async (req) => {
   const hasPublished = req.body.status === "published";
 
@@ -83,6 +86,7 @@ export const updatePost = async (req) => {
   return payload;
 };
 
+// DELETE
 export const deletePost = async (params) => {
   const postId = ObjectId(params.id);
   const collection = db.collection("posts");
