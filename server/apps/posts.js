@@ -96,4 +96,11 @@ postRouter.delete("/:id", async (req, res) => {
   });
 });
 
+// test API
+postRouter.get("/test/api", (req, res) => {
+  return res.json({
+    message: "ทดสอบ API post",
+  });
+});
+
 export default postRouter;
