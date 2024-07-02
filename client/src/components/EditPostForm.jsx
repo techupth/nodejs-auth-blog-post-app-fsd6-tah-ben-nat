@@ -6,6 +6,7 @@ function EditPostForm() {
   const params = useParams();
 
   const { post, getPostById, updatePostById } = usePosts();
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [status, setStatus] = useState("");

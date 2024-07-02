@@ -12,6 +12,7 @@ function HomePage() {
   const [keywords, setKeywords] = useState("");
   const { posts, totalPages, getPosts, deletePost, isError, isLoading } =
     usePosts();
+
   const { logout } = useAuth();
 
   useEffect(() => {

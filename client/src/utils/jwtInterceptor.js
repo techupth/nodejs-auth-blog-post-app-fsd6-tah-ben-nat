@@ -18,8 +18,8 @@ function jwtInterceptor() {
   });
 
   axios.interceptors.response.use(
-    (req) => {
-      return req;
+    (res) => {
+      return res;
     },
     (error) => {
       // 🐨 Todo: Exercise #6

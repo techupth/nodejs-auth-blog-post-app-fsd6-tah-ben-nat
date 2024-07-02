@@ -10,6 +10,7 @@ const usePosts = () => {
   const [isError, setIsError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
 
+  // GET
   const getPosts = async (input) => {
     const { status, keywords, page } = input;
     try {
@@ -31,22 +32,6 @@ const usePosts = () => {
     }
   };
 
-  const deletePost = async (postId) => {
-    try {
-      setIsError(false);
-      setIsLoading(true);
-      await axios.delete(`http://localhost:4000/posts/${postId}`);
-      const newPosts = posts.filter((post) => {
-        return post._id !== postId;
-      });
-      setPosts(newPosts);
-      setIsLoading(false);
-    } catch (error) {
-      setIsError(true);
-      setIsLoading(false);
-    }
-  };
-
   const getPostById = async (postId) => {
     try {
       setIsError(false);
@@ -60,6 +45,7 @@ const usePosts = () => {
     }
   };
 
+  // POST
   const createPost = async (data) => {
     try {
       setIsError(false);
@@ -73,6 +59,7 @@ const usePosts = () => {
     }
   };
 
+  // PUT
   const updatePostById = async (postId, data) => {
     try {
       setIsError(false);
@@ -80,6 +67,23 @@ const usePosts = () => {
       await axios.put(`http://localhost:4000/posts/${postId}`, data);
       setIsLoading(false);
       navigate("/");
+    } catch (error) {
+      setIsError(true);
+      setIsLoading(false);
+    }
+  };
+
+  // DELETE
+  const deletePost = async (postId) => {
+    try {
+      setIsError(false);
+      setIsLoading(true);
+      await axios.delete(`http://localhost:4000/posts/${postId}`);
+      const newPosts = posts.filter((post) => {
+        return post._id !== postId;
+      });
+      setPosts(newPosts);
+      setIsLoading(false);
     } catch (error) {
       setIsError(true);
       setIsLoading(false);

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   const { login } = useAuth();
 
   const handleSubmit = (event) => {
