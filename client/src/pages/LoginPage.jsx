@@ -26,7 +26,7 @@ function LoginPage() {
                 id="username"
                 name="username"
                 type="text"
-                placeholder="doggo"
+                placeholder="username"
                 onChange={(event) => {
                   setUsername(event.target.value);
                 }}
@@ -41,7 +41,7 @@ function LoginPage() {
                 id="password"
                 name="password"
                 type="password"
-                placeholder="pwned"
+                placeholder="password"
                 onChange={(event) => {
                   setPassword(event.target.value);
                 }}
